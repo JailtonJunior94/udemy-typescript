@@ -1,0 +1,23 @@
+{
+  "name": "udemy-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JailtonJunior94/udemy-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JailtonJunior94/udemy-typescript/issues"
+  },
+  "homepage": "https://github.com/JailtonJunior94/udemy-typescript#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
