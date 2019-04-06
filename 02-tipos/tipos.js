@@ -39,3 +39,26 @@ let carro = 'BMW';
 console.log(carro);
 carro = { marca: 'BMW', ano: 2019 };
 console.log(carro);
+// funcões
+function retornaMeunome() {
+    return nome;
+}
+console.log(retornaMeunome());
+function digaOi() {
+    console.log('Oi');
+}
+digaOi();
+function multiplicar(numA, numbB) {
+    return numA * numbB;
+}
+console.log(multiplicar(2, 5));
+// tipo função
+let calculo;
+calculo = multiplicar;
+console.log(calculo(5, 6));
+// objetos
+let usuario = {
+    nome: 'João',
+    idade: 27
+};
+console.log(usuario);
