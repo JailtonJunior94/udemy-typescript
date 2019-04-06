@@ -62,3 +62,40 @@ let usuario = {
     idade: 27
 };
 console.log(usuario);
+// union types
+let nota = 10;
+console.log(`Minha nota é ${nota}!`);
+// Checando tios 
+let valor = 30;
+if (typeof valor === "number") {
+    console.log('É um number!');
+}
+else {
+    console.log(typeof valor);
+}
+// tipo never
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: 'Sabão',
+    preco: -1,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length === 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido!');
+        }
+    }
+};
+produto.validarProduto();
+// null
+let alturaOpcional = 12;
+alturaOpcional = null;
+const contato1 = {
+    nome: 'Fulano',
+    tel1: '9898997',
+    tel2: null
+};
+console.log(contato1);

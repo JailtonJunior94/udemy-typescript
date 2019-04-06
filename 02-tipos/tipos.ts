@@ -76,3 +76,58 @@ let usuario: { nome: string, idade: number } = {
     idade: 27
 }
 console.log(usuario)
+
+// type
+type Funcionario = {
+    supervisores: string[],
+    baterPonto: (horas: number) => string
+}
+
+// union types
+let nota: number | string = 10
+console.log(`Minha nota é ${nota}!`)
+
+// Checando tios 
+let valor = 30
+if (typeof valor === "number") {
+    console.log('É um number!')
+} else {
+    console.log(typeof valor)
+}
+
+// tipo never
+function falha(msg: string): never {
+    throw new Error(msg)
+}
+const produto = {
+    nome: 'Sabão',
+    preco: -1,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length === 0) {
+            falha('Precisa ter um nome')
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido!')
+        }
+    }
+}
+
+produto.validarProduto()
+
+// null
+let alturaOpcional: null | number = 12
+alturaOpcional = null
+
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '9898997',
+    tel2: null
+}
+
+console.log(contato1)
