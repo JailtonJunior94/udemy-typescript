@@ -46,3 +46,64 @@ console.log(subtrair(2, 2))
 const multiplicarArrow = (n1: number, n2: number) => n1 * n2
 console.log(multiplicarArrow(1, 5))
 
+const saudacao = () => console.log('Olá')
+saudacao()
+
+const falarCom = (pessoa: string) => console.log(`Olá ${pessoa}`)
+falarCom('João')
+
+// this (pode variar)
+
+// function normalComThis() {
+//     console.log(this)
+// }
+
+// const normalComThisEspecial = normalComThis.bind(2);
+
+// normalComThisEspecial()
+// normalComThis()
+
+// const arrowComThis = () => console.log(this)
+// arrowComThis()
+
+// parâmetro padrão
+function contagemRegressiva(inicio: number = 3): void {
+    console.log(inicio)
+    while (inicio > 0) {
+        inicio--
+        console.log(inicio)
+    }
+    console.log('Fim')
+}
+
+contagemRegressiva()
+contagemRegressiva(8)
+
+//  Operador Spread & Rest
+
+const numbers = [1, 10, 99, -5]
+console.log(Math.max(...numbers))
+
+const turmaA: string[] = ['João', 'Maria', 'Fernanda']
+const turmaB: string[] = ['Fernando', 'Miguel', 'Lorena', ...turmaA]
+
+console.log(turmaB)
+
+function retornarArray(...args: number[]): number[] {
+    return args
+}
+
+const numeros = retornarArray(1, 2);
+console.log(numeros)
+
+const tupla: [number, string, boolean] = [1, 'abc', false]
+
+function tuplaParam1(a: number, b: string, c: boolean): void {
+    console.log(`1) ${a} ${b} ${c}`)
+}
+
+tuplaParam1(...tupla)
+
+function tuplaParam2(...params: [number, string, boolean]) {
+    console.log(`2) ${params[0]} ${params[1]} ${params[2]}`)
+}
