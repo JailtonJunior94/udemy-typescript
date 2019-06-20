@@ -107,3 +107,62 @@ tuplaParam1(...tupla)
 function tuplaParam2(...params: [number, string, boolean]) {
     console.log(`2) ${params[0]} ${params[1]} ${params[2]}`)
 }
+
+// Destructuring (array)
+const caracteristicas = ['Moto Zetec 1.8', 2020]
+// const motor = caracteristicas[0]
+// const ano = caracteristicas[1]
+
+const [motor, ano] = caracteristicas
+console.log(motor)
+console.log(ano)
+
+const [w, z] = [2, 3]
+
+// Destructuring (objeto)
+const item = {
+    nome: 'SSD 480GB',
+    preco: 200,
+    caracteristicas: {
+        c: 'Importado'
+    }
+}
+
+const nomeItem = item.nome
+const precoItem = item.preco
+
+const { nome: n, preco: p, caracteristicas: { c } } = item
+console.log('nome: ', n)
+console.log('preço: ', p)
+console.log('caracteristicas: ', c)
+
+// Callback
+function esperar3s(callback: (dado: string) => void) {
+    setTimeout(() => {
+        callback('3s depois...')
+    }, 3000)
+}
+
+esperar3s(function (resultado: string) {
+    console.log(resultado)
+})
+
+// Promisse
+function esperar3sPromisse() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('3s depois...')
+        }, 3000)
+    })
+}
+
+esperar3sPromisse()
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+
+fetch('https://swapi.co/api/people/1')
+    .then(response => response.json())
+    .then(person => person.films)
+    .then(films => fetch(films[0]))
+    .then(res => res.json())
+    .then(film => console.log(film.title))
