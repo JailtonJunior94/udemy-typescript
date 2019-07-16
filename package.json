@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/JailtonJunior94/udemy-typescript#readme",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "systemjs": "^0.21.5"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.5"
   }
 }
