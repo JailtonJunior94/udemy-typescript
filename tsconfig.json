@@ -4,6 +4,7 @@
     "module": "commonjs",
     "noEmitOnError": false,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true
   }
 }
